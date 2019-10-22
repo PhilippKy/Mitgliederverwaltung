@@ -11,8 +11,16 @@
 
     <developers>
         <developer>
-            <name>Stephan Anft</name>
-            <email>stephan.anft@nordakademie.de</email>
+            <name>Iurri Chernovalov</name>
+            <email>iurii.chernovalov@nordakademie.de</email>
+        </developer>
+        <developer>
+            <name>Denis Karpoukhine</name>
+            <email>denis.karpoukhine@nordakademie.de</email>
+        </developer>
+        <developer>
+            <name>Philipp Kopetzky</name>
+            <email>Philipp.Kopetzky@nordakademie.de</email>
         </developer>
     </developers>
 
