@@ -3,7 +3,6 @@ package de.nordakademie.iaa.repetitorium.model;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Entity representing a Member.
@@ -52,8 +51,6 @@ public class Member {
 
     @Column(name = "Member_familyMember")
     private String familyMember;
-
-    public Member() {}
 
     public Long getMemberId() {
         return memberId;
