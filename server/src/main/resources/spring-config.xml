@@ -58,11 +58,11 @@
     </aop:config>
 
     <!-- Data access objects -->
-    <bean id="roomDAO" class="de.nordakademie.iaa.repetitorium.dao.RoomDAO"/>
+    <bean id="memberDAO" class="de.nordakademie.iaa.repetitorium.dao.MemberDAO"/>
 
     <!-- Services -->
-    <bean id="roomService" class="de.nordakademie.iaa.repetitorium.service.RoomServiceImpl">
-        <property name="roomDAO" ref="roomDAO"/>
+    <bean id="memberService" class="de.nordakademie.iaa.repetitorium.service.MemberServiceImpl">
+        <property name="memberDAO" ref="memberDAO"/>
     </bean>
 
 </beans>

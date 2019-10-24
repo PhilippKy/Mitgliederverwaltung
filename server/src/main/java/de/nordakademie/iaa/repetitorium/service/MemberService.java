@@ -49,7 +49,8 @@ public interface MemberService {
      * @param familyMember   family member.
      * @throws EntityNotFoundException if no room could be found for the given id.
      */
-    void update(Long memberId, String name,String address, String memberType, Integer membershipFee, Integer payedFee, Integer bankInfo, Member familyMember) throws EntityNotFoundException;
+    void update(Long memberId, String name,String address, String memberType, Integer membershipFee,
+                Integer payedFee, Integer bankInfo, Member familyMember) throws EntityNotFoundException;
 
     /**
      * Deletes the room with the given id.
@@ -59,3 +60,4 @@ public interface MemberService {
      */
     void delete(Long memberId) throws EntityNotFoundException;
 }
+
