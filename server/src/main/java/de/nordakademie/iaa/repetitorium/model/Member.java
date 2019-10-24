@@ -32,13 +32,13 @@ public class Member {
     @Column(nullable = false, name = "Member_DateJoined")
     private Date dateJoined;
 
-    @Column(nullable = false, length = 8, name = "Member_DateCancelled")
+    @Column(nullable = false, name = "Member_DateCancelled")
     private Date dateCancelled;
 
-    @Column(nullable = false, length = 8, name = "Member_DateExit")
+    @Column(nullable = false, name = "Member_DateExit")
     private Date dateExit;
 
-    @Column(nullable = false, length = 8, name = "Member_Type")
+    @Column(nullable = false, name = "Member_Type")
     private String memberType;
 
     @Column(nullable = false, name = "Member_Fee")
@@ -81,32 +81,31 @@ public class Member {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthday(int year, int month, int dayOfMonth) {
     }
 
     public Date getDateJoined() {
         return dateJoined;
     }
 
-    public void setDateJoined(Date dateJoined) {
-        this.dateJoined = dateJoined;
+    public void setDateJoined(int year, int month, int dayOfMonth) {
+
     }
 
     public Date getDateCancelled() {
         return dateCancelled;
     }
 
-    public void setDateCancelled(Date dateCancelled) {
-        this.dateCancelled = dateCancelled;
+    public void setDateCancelled(int year, int month, int dayOfMonth) {
+
     }
 
     public Date getDateExit() {
         return dateExit;
     }
 
-    public void setDateExit(Date dateExit) {
-        this.dateExit = dateExit;
+    public void setDateExit(int year, int month, int dayOfMonth) {
+
     }
 
     public String getMemberType() {
