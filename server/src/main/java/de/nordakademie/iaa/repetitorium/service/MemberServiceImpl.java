@@ -17,7 +17,7 @@ public class MemberServiceImpl {
         Member member1 = new Member();
         member.setName("Max Mustermann");
         member.setAddress("Musterstraße 1");
-        member.setBirthday(01012000);
+        member.setBirthday(2000-01-01);
         member.setDateJoined(31122010);
         member.setDateCancelled(01012011);
         member.setDateExit(02012011);

@@ -3,6 +3,7 @@ package de.nordakademie.iaa.repetitorium.model;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Entity representing a Member.
@@ -26,16 +27,16 @@ public class Member {
     private String address;
 
     @Column(nullable = false, name = "Member_Birthday")
-    private Integer birthday;
+    private Date birthday;
 
     @Column(nullable = false, name = "Member_DateJoined")
-    private Integer dateJoined;
+    private Date dateJoined;
 
     @Column(nullable = false, length = 8, name = "Member_DateCancelled")
-    private Integer dateCancelled;
+    private Date dateCancelled;
 
     @Column(nullable = false, length = 8, name = "Member_DateExit")
-    private Integer dateExit;
+    private Date dateExit;
 
     @Column(nullable = false, length = 8, name = "Member_Type")
     private String memberType;
@@ -50,7 +51,7 @@ public class Member {
     private Integer bankInfo;
 
     @Column(name = "Member_familyMember")
-    private String familyMember;
+    private Member familyMember;
 
     public Long getMemberId() {
         return memberId;
@@ -76,35 +77,35 @@ public class Member {
         this.address = address;
     }
 
-    public Integer getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Integer birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
-    public Integer getDateJoined() {
+    public Date getDateJoined() {
         return dateJoined;
     }
 
-    public void setDateJoined(Integer dateJoined) {
+    public void setDateJoined(Date dateJoined) {
         this.dateJoined = dateJoined;
     }
 
-    public Integer getDateCancelled() {
+    public Date getDateCancelled() {
         return dateCancelled;
     }
 
-    public void setDateCancelled(Integer dateCancelled) {
+    public void setDateCancelled(Date dateCancelled) {
         this.dateCancelled = dateCancelled;
     }
 
-    public Integer getDateExit() {
+    public Date getDateExit() {
         return dateExit;
     }
 
-    public void setDateExit(Integer dateExit) {
+    public void setDateExit(Date dateExit) {
         this.dateExit = dateExit;
     }
 
@@ -140,11 +141,11 @@ public class Member {
         this.bankInfo = bankInfo;
     }
 
-    public String getFamilyMember() {
+    public Member getFamilyMember() {
         return familyMember;
     }
 
-    public void setFamilyMember(String familyMember) {
-        this.familyMember = familyMember;
+    public void setFamilyMember(Member memberId) {
+        this.familyMember = memberId;
     }
 }
