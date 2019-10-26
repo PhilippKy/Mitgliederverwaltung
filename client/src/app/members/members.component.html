@@ -1,0 +1,7 @@
+<p *ngIf="!currentMember">
+  <app-member-list [members]="members" (add)="onAddMember()" (edit)="onEditMember($event)" (delete)="onDeleteMember($event)"></app-member-list>
+</p>
+
+<p *ngIf="currentMember">
+  <app-member-form [member]="currentMember" (save)="onSave($event)" (cancel)="onCancel()"></app-member-form>
+</p>
