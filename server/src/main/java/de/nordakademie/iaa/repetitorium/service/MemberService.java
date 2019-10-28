@@ -1,6 +1,6 @@
 package de.nordakademie.iaa.repetitorium.service;
 
-import de.nordakademie.iaa.repetitorium.model.Member;
+import de.nordakademie.iaa.repetitorium.model.ClubMember;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ public interface MemberService {
     /**
      * Takes the new member and stores it in the database.
      *
-     * @param member The member to be persisted.
+     * @param clubMember The member to be persisted.
      * @throws EntityAlreadyPresentException if a member with the same Name/Address/birthday
      *                                       combination is already present in the database.
      */
-    void createNew(Member member) throws EntityAlreadyPresentException;
+    void createNew(ClubMember clubMember) throws EntityAlreadyPresentException;
 
     /**
      * List all rooms currently stored in the database.
@@ -26,7 +26,7 @@ public interface MemberService {
      * @return a list of Member entities. If no member was found an empty list is
      * returned.
      */
-    List<Member> findAll();
+    List<ClubMember> findAll();
 
     /**
      * Returns the room identified by the given id.
@@ -34,7 +34,7 @@ public interface MemberService {
      * @param memberId The identifier.
      * @return the found entity or {@code null} if no entity was found with given identifier.
      */
-    Member findBy(Long memberId);
+    ClubMember findBy(Long memberId);
 
     /**
      * Updates a Member entity and stores the changes into the database.
@@ -46,11 +46,11 @@ public interface MemberService {
      * @param membershipFee  Membership fee.
      * @param payedFee       payed fee.
      * @param bankInfo       bank information.
-     * @param familyMember   family member.
+     * @param familyClubMember   family member.
      * @throws EntityNotFoundException if no room could be found for the given id.
      */
     void update(Long memberId, String name,String address, String memberType, Integer membershipFee,
-                Integer payedFee, Integer bankInfo, Member familyMember) throws EntityNotFoundException;
+                Integer payedFee, Integer bankInfo, ClubMember familyClubMember) throws EntityNotFoundException;
 
     /**
      * Deletes the room with the given id.

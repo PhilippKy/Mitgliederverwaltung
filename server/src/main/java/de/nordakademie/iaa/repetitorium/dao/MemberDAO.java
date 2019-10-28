@@ -1,6 +1,6 @@
 package de.nordakademie.iaa.repetitorium.dao;
 
-import de.nordakademie.iaa.repetitorium.model.Member;
+import de.nordakademie.iaa.repetitorium.model.ClubMember;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,11 +16,10 @@ public class MemberDAO {
      * @param address The address.
      * @return a member or {@code null}.
      */
-    public Member findBy(String name, String address) {
+    public ClubMember findBy(String name, String address) {
         return entityManager
-                .createQuery("select member from Member member where member.name = :name and member.address = :adress", Member.class)
+                .createQuery("select clubMember from ClubMember clubMember where clubMember.name = :name", ClubMember.class)
                 .setParameter("name", name)
-                .setParameter("address", address)
                 .getResultStream()
                 .findFirst().orElse(null);
     }
@@ -28,10 +27,10 @@ public class MemberDAO {
     /**
      * Takes the member and stores it in the database.
      *
-     * @param member The Member to be persisted.
+     * @param clubMember The Member to be persisted.
      */
-    public void persist(Member member) {
-        entityManager.persist(member);
+    public void persist(ClubMember clubMember) {
+        entityManager.persist(clubMember);
     }
 
     /**
@@ -39,8 +38,8 @@ public class MemberDAO {
      *
      * @return a list of Member entities. If no member was found an empty list is returned.
      */
-    public List<Member> findAll() {
-        return entityManager.createQuery("select member from Member member", Member.class).getResultList();
+    public List<ClubMember> findAll() {
+        return entityManager.createQuery("select clubMember from ClubMember clubMember", ClubMember.class).getResultList();
     }
     /**
      * Returns the member identified by the given id.
@@ -48,16 +47,16 @@ public class MemberDAO {
      * @param memberId The identifier.
      * @return the found entity or {@code null} if no entity was found with given identifier.
      */
-    public Member findBy(Long memberId) {
-        return entityManager.find(Member.class, memberId);
+    public ClubMember findBy(Long memberId) {
+        return entityManager.find(ClubMember.class, memberId);
     }
     /**
      * Deletes the member.
      *
-     * @param member The room to be deleted.
+     * @param clubMember The room to be deleted.
      */
-    public void delete(Member member) {
-        entityManager.remove(member);
+    public void delete(ClubMember clubMember) {
+        entityManager.remove(clubMember);
     }
     @PersistenceContext
     public void setEntityManager(EntityManager entityManager) {

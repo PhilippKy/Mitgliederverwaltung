@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Member")
-public class Member {
+public class ClubMember {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,7 +51,7 @@ public class Member {
     private Integer bankInfo;
 
     @Column(name = "Member_familyMember")
-    private Member familyMember;
+    private String familyClubMember;
 
     public Long getMemberId() {
         return memberId;
@@ -140,11 +140,11 @@ public class Member {
         this.bankInfo = bankInfo;
     }
 
-    public Member getFamilyMember() {
-        return familyMember;
+    public String getFamilyClubMember() {
+        return familyClubMember;
     }
 
-    public void setFamilyMember(Member memberId) {
-        this.familyMember = memberId;
+    public void setFamilyClubMember(String clubMemberId) {
+        this.familyClubMember = clubMemberId;
     }
 }

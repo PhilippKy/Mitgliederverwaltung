@@ -1,6 +1,6 @@
 package de.nordakademie.iaa.repetitorium.controller;
 
-import de.nordakademie.iaa.repetitorium.model.Member;
+import de.nordakademie.iaa.repetitorium.model.ClubMember;
 import de.nordakademie.iaa.repetitorium.service.EntityAlreadyPresentException;
 import de.nordakademie.iaa.repetitorium.service.EntityNotFoundException;
 import de.nordakademie.iaa.repetitorium.service.MemberService;
@@ -32,24 +32,24 @@ public class MemberController {
      * @return the list of members.
      */
     @RequestMapping(path = "/members", method = GET)
-    public List<Member> listMembers() {
+    public List<ClubMember> listMembers() {
         return memberService.findAll();
     }
 
     /**
      * Saves the given member (either by creating a new one or updating an existing).
      *
-     * @param member The member to save.
+     * @param clubMember The member to save.
      */
-    @RequestMapping(path = "/members", method = PUT)
-    public ResponseEntity saveMember(@RequestBody Member member) {
+  /*  @RequestMapping(path = "/members", method = PUT)
+    public ResponseEntity saveMember(@RequestBody ClubMember clubMember) {
         try {
-            if (member.getMemberId() == null) {
-                memberService.createNew(member);
+            if (clubMember.getMemberId() == null) {
+                memberService.createNew(clubMember);
             }
             else {
-                memberService.update(member.getMemberId(), member.getName(),member.getAddress(),member.getMemberType(),
-                        member.getMembershipFee(),member.getPayedFee(),member.getBankInfo(),member.getFamilyMember());
+                memberService.update(clubMember.getMemberId(), clubMember.getName(), clubMember.getAddress(), clubMember.getMemberType(),
+                        clubMember.getMembershipFee(), clubMember.getPayedFee(), clubMember.getBankInfo(), clubMember.getFamilyClubMember());
             }
             return ResponseEntity.ok().build();
         }
@@ -59,14 +59,14 @@ public class MemberController {
         catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
     /**
      * Deletes the room with given id.
      *
      * @param memberId The id of the member to be deleted.
      */
-    @RequestMapping(path = "/members/{id}", method = DELETE)
+    @RequestMapping(path = "/members/{memberId}", method = DELETE)
     public ResponseEntity deleteRoom(@PathVariable Long memberId) {
         try {
             memberService.delete(memberId);
