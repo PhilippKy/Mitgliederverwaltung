@@ -36,7 +36,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void update(Long memberId, String name,String address, String memberType, Integer membershipFee,
-                       Integer payedFee, Integer bankInfo, ClubMember familyClubMember) throws EntityNotFoundException {
+                       Integer payedFee, Integer bankInfo
+            //, ClubMember familyClubMember
+                       ) throws EntityNotFoundException {
+
         ClubMember clubMember = findBy(memberId);
         if (clubMember == null) {
             throw new EntityNotFoundException();
@@ -47,7 +50,7 @@ public class MemberServiceImpl implements MemberService {
         clubMember.setMembershipFee(membershipFee);
         clubMember.setPayedFee(payedFee);
         clubMember.setBankInfo(bankInfo);
-        clubMember.setFamilyClubMember("familyClubMember");
+  //      clubMember.setFamilyClubMember("familyClubMember");
     }
 
     @Override

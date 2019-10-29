@@ -50,8 +50,8 @@ public class ClubMember {
     @Column(nullable = false, name = "Member_BankInfo")
     private Integer bankInfo;
 
-    @Column(name = "Member_familyMember")
-    private String familyClubMember;
+   // @Column(name = "Member_familyMember")
+   // private String familyClubMember;
 
     public Long getMemberId() {
         return memberId;
@@ -140,11 +140,11 @@ public class ClubMember {
         this.bankInfo = bankInfo;
     }
 
-    public String getFamilyClubMember() {
-        return familyClubMember;
-    }
+   // public String getFamilyClubMember() {
+  //      return familyClubMember;
+   // }
 
-    public void setFamilyClubMember(String clubMemberId) {
-        this.familyClubMember = clubMemberId;
-    }
+   // public void setFamilyClubMember(String clubMemberId) {
+    //    this.familyClubMember = clubMemberId;
+   // }
 }

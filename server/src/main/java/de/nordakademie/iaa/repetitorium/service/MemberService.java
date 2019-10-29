@@ -46,11 +46,13 @@ public interface MemberService {
      * @param membershipFee  Membership fee.
      * @param payedFee       payed fee.
      * @param bankInfo       bank information.
-     * @param familyClubMember   family member.
+     * //@param familyClubMember   family member.
      * @throws EntityNotFoundException if no room could be found for the given id.
      */
     void update(Long memberId, String name,String address, String memberType, Integer membershipFee,
-                Integer payedFee, Integer bankInfo, ClubMember familyClubMember) throws EntityNotFoundException;
+                Integer payedFee, Integer bankInfo
+            //, ClubMember familyClubMember
+                ) throws EntityNotFoundException;
 
     /**
      * Deletes the room with the given id.

@@ -41,7 +41,7 @@ public class MemberController {
      *
      * @param clubMember The member to save.
      */
-  /*  @RequestMapping(path = "/members", method = PUT)
+    @RequestMapping(path = "/members", method = PUT)
     public ResponseEntity saveMember(@RequestBody ClubMember clubMember) {
         try {
             if (clubMember.getMemberId() == null) {
@@ -49,7 +49,7 @@ public class MemberController {
             }
             else {
                 memberService.update(clubMember.getMemberId(), clubMember.getName(), clubMember.getAddress(), clubMember.getMemberType(),
-                        clubMember.getMembershipFee(), clubMember.getPayedFee(), clubMember.getBankInfo(), clubMember.getFamilyClubMember());
+                        clubMember.getMembershipFee(), clubMember.getPayedFee(), clubMember.getBankInfo());
             }
             return ResponseEntity.ok().build();
         }
@@ -59,7 +59,7 @@ public class MemberController {
         catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
-    }*/
+    }
 
     /**
      * Deletes the room with given id.

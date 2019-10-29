@@ -11,7 +11,7 @@ import org.hibernate.exception.ConstraintViolationException;
 
 public class TestMemberServiceImpl {
 
-    private MemberDAO memberDAO;
+    /*private MemberDAO memberDAO;
 
 
     public void createMember(ClubMember clubMember) throws EntityAlreadyPresentException {
@@ -37,6 +37,6 @@ public class TestMemberServiceImpl {
         catch (ConstraintViolationException e) {
             throw new EntityAlreadyPresentException();
         }
-    }
+    }*/
 
 }
