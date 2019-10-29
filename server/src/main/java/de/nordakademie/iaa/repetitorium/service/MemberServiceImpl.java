@@ -17,7 +17,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void createNew(ClubMember clubMember) throws EntityAlreadyPresentException {
-        if (memberDAO.findBy(clubMember.getName(), clubMember.getAddress()) != null) {
+        if (clubMember.getMemberId() != null) {
             // Existing room found in database
             throw new EntityAlreadyPresentException();
         }
@@ -35,7 +35,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void update(Long memberId, String name,String address, String memberType, Integer membershipFee,
+    public void update(Long memberId, String name,String address, Long birthday, String memberType, Integer membershipFee,
                        Integer payedFee, Integer bankInfo
             //, ClubMember familyClubMember
                        ) throws EntityNotFoundException {
@@ -46,6 +46,7 @@ public class MemberServiceImpl implements MemberService {
         }
         clubMember.setName(name);
         clubMember.setAddress(address);
+        clubMember.setBirthday(birthday);
         clubMember.setMemberType(memberType);
         clubMember.setMembershipFee(membershipFee);
         clubMember.setPayedFee(payedFee);

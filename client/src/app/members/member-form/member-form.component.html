@@ -5,7 +5,7 @@
             <div class="col-md-6 mb-3">
                 <label for="firstname">Firstname</label>
                 <input  type="text" class="form-control" id="firstname" name="firstname"
-                        placeholder="Firstname" [(ngModel)]="member.firstname" 
+                        placeholder="Firstname" [(ngModel)]="member.firstname"
                         #firstname="ngModel" required>
                 <div class="invalid-feedback" *ngIf="firstname.dirty && firstname.invalid">
                     Valid firstname is required.
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-6 mb-3">
                 <label for="lastname">Lastname</label>
-                <input  type="text" class="form-control" id="lastname" name="lastname" 
+                <input  type="text" class="form-control" id="lastname" name="lastname"
                         [(ngModel)]="member.lastname" #lastname="ngModel"
                         placeholder="Lastname" required>
                 <div class="invalid-feedback" *ngIf="lastname.dirty && lastname.hasError('required')">
@@ -21,11 +21,11 @@
                 </div>
             </div>
         </div>
-  
+
         <div class="mb-3">
             <label for="membershipType">Membership Type</label>
             <!--input  type="text" class="form-control" id="membershipType" name="membershipType"
-                    [(ngModel)]="member.membershipType" type="number" #membershipType="ngModel"
+                    [(ngModel)]="clubMember.membershipType" type="number" #membershipType="ngModel"
                     placeholder="Username" required-->
             <select name="membershipType" id="membershipType" class="custom-select">
                 <option [(ngModel)]="member.membershipType" #membershipType="ngModel">{{ member.membershipType }}</option>
@@ -48,7 +48,7 @@
                 <label for="firstname">Firstname:</label>
             </td>
             <td>
-                <input id="firstname" name="firstname" [(ngModel)]="member.firstname" required #firstname="ngModel">
+                <input id="firstname" name="firstname" [(ngModel)]="clubMember.firstname" required #firstname="ngModel">
             </td>
             <span *ngIf="firstname.dirty && firstname.invalid">Value is required</span>
         </tr>
@@ -56,7 +56,7 @@
             <td>
                 <label for="lastname">Lastname:</label>
             </td>
-            <input id="lastname" name="lastname" [(ngModel)]="member.lastname" #lastname="ngModel">
+            <input id="lastname" name="lastname" [(ngModel)]="clubMember.lastname" #lastname="ngModel">
             <span *ngIf="lastname.dirty && lastname.hasError('required')">Value is required</span>
         </tr>
         <tr>
@@ -64,7 +64,7 @@
                 <label for="membershipType">Membership Type:</label>
             </td>
             <td>
-                <input id="membershipType" name="membershipType" [(ngModel)]="member.membershipType" type="number" required #membershipType="ngModel">
+                <input id="membershipType" name="membershipType" [(ngModel)]="clubMember.membershipType" type="number" required #membershipType="ngModel">
             </td>
             <span *ngIf="membershipType.dirty && membershipType.invalid">Value is required</span>
         </tr>

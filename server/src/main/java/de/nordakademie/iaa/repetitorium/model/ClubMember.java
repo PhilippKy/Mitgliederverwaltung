@@ -3,7 +3,7 @@ package de.nordakademie.iaa.repetitorium.model;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * Entity representing a Member.
@@ -12,130 +12,101 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "Member")
+
 public class ClubMember {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long memberId;
-
-    @NaturalId
-    @Column(nullable = false, name = "Member_Name")
     private String name;
-
-    @Column(nullable = false, name = "Member_Address")
     private String address;
-
-    @Column(nullable = false, name = "Member_Birthday")
-    private Date birthday;
-
-    @Column(nullable = false, name = "Member_DateJoined")
-    private Date dateJoined;
-
-    @Column(nullable = false, name = "Member_DateCancelled")
-    private Date dateCancelled;
-
-    @Column(nullable = false, name = "Member_DateExit")
-    private Date dateExit;
-
-    @Column(nullable = false, name = "Member_Type")
+    private Long birthday;
+    private Long dateJoined;
+    private Long dateCancelled;
+    private Long dateExit;
     private String memberType;
-
-    @Column(nullable = false, name = "Member_Fee")
     private Integer membershipFee;
-
-    @Column(nullable = false, name = "Member_PayedFee")
     private Integer payedFee;
-
-    @Column(nullable = false, name = "Member_BankInfo")
     private Integer bankInfo;
 
    // @Column(name = "Member_familyMember")
    // private String familyClubMember;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getMemberId() {
         return memberId;
     }
-
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
 
+    @NaturalId
+    @Column(nullable = false)
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
+    @Column(nullable = false)
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Long getBirthday() { return birthday; }
+    public void setBirthday(Long birthday) {
+        this.birthday = birthday;
     }
 
-    public void setBirthday(int year, int month, int dayOfMonth) {
-    }
-
-    public Date getDateJoined() {
+    public Long getDateJoined() {
         return dateJoined;
     }
-
-    public void setDateJoined(int year, int month, int dayOfMonth) {
-
+    public void setDateJoined(Long dateJoined ) {
+        this.dateJoined = dateJoined;
     }
 
-    public Date getDateCancelled() {
+    public Long getDateCancelled() {
         return dateCancelled;
     }
+    public void setDateCancelled( Long getDateCancelled) {  this.dateCancelled = dateCancelled;  }
 
-    public void setDateCancelled(int year, int month, int dayOfMonth) {
-
-    }
-
-    public Date getDateExit() {
+    public Long getDateExit() {
         return dateExit;
     }
+    public void setDateExit(Long getDateExit) {  this.dateExit = dateExit;  }
 
-    public void setDateExit(int year, int month, int dayOfMonth) {
-
-    }
-
+    @Column(nullable = false)
     public String getMemberType() {
         return memberType;
     }
-
     public void setMemberType(String memberType) {
         this.memberType = memberType;
     }
 
+    @Column(nullable = false)
     public Integer getMembershipFee() {
         return membershipFee;
     }
-
     public void setMembershipFee(Integer membershipFee) {
         this.membershipFee = membershipFee;
     }
 
+    @Column(nullable = false)
     public Integer getPayedFee() {
         return payedFee;
     }
-
     public void setPayedFee(Integer payedFee) {
         this.payedFee = payedFee;
     }
 
+    @Column(nullable = false)
     public Integer getBankInfo() {
         return bankInfo;
     }
-
     public void setBankInfo(Integer bankInfo) {
         this.bankInfo = bankInfo;
     }
